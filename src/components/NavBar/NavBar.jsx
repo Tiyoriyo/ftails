@@ -1,16 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NavBtn from '../NavBtn/navBtn';
 
-function NavBar() {
+function NavBar({ stateChanger }) {
   return (
-    <div id="home-buttons" className="hidden sm:flex gap-4 md:gap-6 lg:gap-10 xl:gap-16 justify-center mx-auto" alt="Pages List">
-      <NavBtn pageName="home" />
-      <NavBtn pageName="about" />
-      <NavBtn pageName="contact" />
-      <NavBtn pageName="services" />
-      <NavBtn pageName="affiliation" />
+    <div id="home-buttons" className="flex flex-wrap justify-evenly gap-5 m-2" alt="Pages List">
+      <NavBtn pageName="home" stateChanger={stateChanger} />
+      <NavBtn pageName="about" stateChanger={stateChanger} />
+      <NavBtn pageName="contact" stateChanger={stateChanger} />
+      <NavBtn pageName="services" stateChanger={stateChanger} />
+      <NavBtn pageName="affiliation" stateChanger={stateChanger} />
     </div>
   );
 }
+
+NavBar.propTypes = {
+  stateChanger: PropTypes.func,
+};
+
+NavBar.defaultProps = {
+  stateChanger: undefined,
+};
 
 export default NavBar;

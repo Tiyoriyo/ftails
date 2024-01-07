@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import addShrink from '../../addShrink';
+import './navBtn.css';
 
-function NavBtn({ pageName }) {
+function NavBtn({ pageName, stateChanger }) {
   const getCapitalizedName = () => {
     const string = pageName;
     const firstLetter = string.slice(0, 1);
@@ -13,22 +13,30 @@ function NavBtn({ pageName }) {
   };
 
   return (
-    <img
-      src={`/${pageName}Btn.png`}
-      alt={`${getCapitalizedName()} Page Button`}
-      className="sm:w-[100px] md:w-[125px] lg:w-[150px] xl:w-[175px]"
-      onMouseOut={addShrink}
+    <button
+      type="button"
+      onClick={() => stateChanger(pageName)}
+      onMouseOut={undefined}
       onBlur={() => undefined}
-    />
+    >
+      <img
+        src={`/${pageName}Btn.png`}
+        className="w-[150px] xxl:w-[175px] hover:animate-growhover"
+        alt={`${getCapitalizedName()} Page Button`}
+      />
+    </button>
+
   );
 }
 
 NavBtn.propTypes = {
   pageName: PropTypes.string,
+  stateChanger: PropTypes.func,
 };
 
 NavBtn.defaultProps = {
   pageName: undefined,
+  stateChanger: undefined,
 };
 
 export default NavBtn;
