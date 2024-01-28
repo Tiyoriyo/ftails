@@ -18,6 +18,16 @@ export default {
           from: { transform: 'scale(1.1)' },
           to: { transform: 'scale(1)' },
         },
+        load: {
+          from: {
+            transform: 'scale(0)',
+            opacity: 0,
+          },
+          to: {
+            transform: 'scale(1)',
+            opacity: 1,
+          },
+        },
       },
       screens: {
         xs: '490px',
@@ -28,10 +38,16 @@ export default {
         grow: 'grow 0.1s ease-in-out forwards',
         shrink: 'shrink 0.2s ease-in-out forwards',
         growhover: 'growhover 0.2s ease-in-out forwards',
+        load: 'load 0.3s ease-in-out forwards',
+      },
+      transitionProperty: {
+        height: 'max-height',
       },
     },
     fontFamily: {
       scribble: ['Redacted Script', 'cursive'],
+      sulphur: ['Sulphur Point', 'sans-serif'],
+      thasadith: ['Thasadith', 'sans-serif'],
     },
   },
   plugins: [],

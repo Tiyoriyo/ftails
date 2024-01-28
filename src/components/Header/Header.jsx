@@ -4,9 +4,8 @@ import NavBar from '../NavBar/NavBar';
 import Logo from '../Logo/Logo';
 
 function Header({ stateChanger }) {
-  console.log(window.innerWidth);
   return (
-    <div className="w-[100%]">
+    <div className="flex flex-col items-center w-[100%]">
       <Logo />
       <NavBar
         stateChanger={stateChanger}
