@@ -6,6 +6,7 @@ import services from '../../assets/services';
 const CardStrip = forwardRef(({
   stripIndex,
   itemController,
+  stateController,
 }, ref) => {
   const sIndex = stripIndex;
   const moveStrip = itemController;
@@ -16,7 +17,7 @@ const CardStrip = forwardRef(({
     >
       <div
         ref={ref}
-        className="flex gap-24 pl-[50px] transition duration-500"
+        className="flex gap-24 pl-[50px] transition-[left] duration-500 relative"
       >
         {Object.keys(services).map((item, index) => (
           <Card
@@ -25,6 +26,7 @@ const CardStrip = forwardRef(({
             index={index}
             stripIndex={sIndex}
             itemController={moveStrip}
+            stateController={stateController}
           />
         ))}
       </div>
@@ -35,11 +37,13 @@ const CardStrip = forwardRef(({
 CardStrip.propTypes = {
   stripIndex: PropTypes.number,
   itemController: PropTypes.func,
+  stateController: PropTypes.func,
 };
 
 CardStrip.defaultProps = {
   stripIndex: undefined,
   itemController: undefined,
+  stateController: undefined,
 };
 
 export default CardStrip;

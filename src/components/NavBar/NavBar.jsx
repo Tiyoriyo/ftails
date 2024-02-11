@@ -5,8 +5,8 @@ import NavBtn from '../NavBtn/navBtn';
 function NavBar({ stateChanger }) {
   return (
     <div
+      className="flex flex-wrap justify-center gap-4 xs:gap-6 md:gap-8 lg:gap-10"
       id="home-buttons"
-      className="flex w-full flex-wrap justify-center gap-x-8 lg:gap-x-16 gap-y-4 m-2"
       alt="Pages List"
     >
       <NavBtn pageName="home" stateChanger={stateChanger} />

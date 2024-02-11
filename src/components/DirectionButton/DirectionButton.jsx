@@ -14,18 +14,18 @@ function DirectionButton({
     },
     1: {
       left: 'house.png',
-      right: 'medication.png',
+      right: 'paw.png',
     },
     2: {
       left: 'sleep.png',
-      right: 'paw.png',
-    },
-    3: {
-      left: 'medication.png',
       right: 'shower.png',
     },
-    4: {
+    3: {
       left: 'paw.png',
+      right: 'medication.png',
+    },
+    4: {
+      left: 'shower.png',
       right: null,
     },
   };

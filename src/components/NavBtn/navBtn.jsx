@@ -14,13 +14,13 @@ function NavBtn({ pageName, stateChanger }) {
   return (
     <button
       type="button"
+      className="w-[175px]"
       onClick={() => stateChanger(pageName)}
       onMouseOut={undefined}
       onBlur={() => undefined}
     >
       <img
         src={`/${pageName}Btn.png`}
-        className="w-[150px] xxl:w-[175px] hover:animate-growhover"
         alt={`${getCapitalizedName()} Page Button`}
       />
     </button>

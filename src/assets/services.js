@@ -28,17 +28,6 @@ const services = {
       ['prices ', 'may vary based on location.'],
     ],
   },
-  adminMed: {
-    key: 'adminmed',
-    title: 'Administration of Medication',
-    paragraphs: [
-      'Our Dream Team will help you administrate medication for your furbaby, either while you are away or if you are struggling to do so.',
-    ],
-    extraInfo: [
-      ['price ', '35 - 50 aed'],
-      ['price ', 'may vary based on medication type'],
-    ],
-  },
   maniPawi: {
     key: 'manipawi',
     title: 'Mani Pawi',
@@ -57,6 +46,17 @@ const services = {
     ],
     extraInfo: [
       ['price ', '10 aed'],
+    ],
+  },
+  adminMed: {
+    key: 'adminmed',
+    title: 'Administration of Medication',
+    paragraphs: [
+      'Our Dream Team will help you administrate medication for your furbaby, either while you are away or if you are struggling to do so.',
+    ],
+    extraInfo: [
+      ['price ', '35 - 50 aed'],
+      ['price ', 'may vary based on medication type'],
     ],
   },
 };

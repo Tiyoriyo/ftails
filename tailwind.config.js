@@ -28,6 +28,26 @@ export default {
             opacity: 1,
           },
         },
+        breathing: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+          },
+          '50%': {
+            transform: 'scale(1.1)',
+          },
+
+        },
+        hop: {
+          '0%, 100%': {
+            transform: 'translateY(0) rotate(0)',
+          },
+          '25%, 75%': {
+            transform: 'rotate(5deg)',
+          },
+          '50%': {
+            transform: 'translateY(-25%) rotate(-5deg)',
+          },
+        },
       },
       screens: {
         xs: '490px',
@@ -39,6 +59,8 @@ export default {
         shrink: 'shrink 0.2s ease-in-out forwards',
         growhover: 'growhover 0.2s ease-in-out forwards',
         load: 'load 0.3s ease-in-out forwards',
+        breathing: 'breathing 3s ease-in-out infinite',
+        hop: 'hop 0.5s ease-in-out forwards',
       },
       transitionProperty: {
         height: 'max-height',
@@ -48,6 +70,8 @@ export default {
       scribble: ['Redacted Script', 'cursive'],
       sulphur: ['Sulphur Point', 'sans-serif'],
       thasadith: ['Thasadith', 'sans-serif'],
+      meow: ['Meow Script', 'cursive'],
+      animal: ['Just Me Again Down Here', 'cursive'],
     },
   },
   plugins: [],

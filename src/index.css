@@ -7,13 +7,4 @@
     margin: 0;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-}
 
-#root {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
