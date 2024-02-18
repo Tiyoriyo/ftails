@@ -9,7 +9,7 @@ function StoryContent({
     <div className="flex flex-col items-center w-[85%] mt-8 font-thasadith">
       <div className="flex flex-col xl:flex-row justify-center items-center gap-8">
         <div className="flex flex-col gap-4 items-center">
-          <img src="src/assets/cats/catn3.png" className="w-[150px] border-b-4 border-melon border-dashed pb-4" alt="" />
+          <img src="./cats/catn3.png" className="w-[150px] border-b-4 border-melon border-dashed pb-4" alt="" />
           <div className="flex flex-col gap-4 xl:max-w-[550px] items-center font-semibold xl:font-light text-[18px] capitalize pb-4 text-justify">
             <p className="text-basic">In the heart of our shared love for all things feline, Fairy Tails was born—a tale spun by two kindred spirits with a passion for whiskers, purrs, and the enchanting world of cats. Our journey began when [Your Names], the dreamweavers behind Fairy Tails, realized the need for a haven where cats could be surrounded by love and care, even when their human companions were away.</p>
             <p className="text-melon drop-shadow-lg">- - &#x25CF; - -</p>
@@ -19,7 +19,7 @@ function StoryContent({
 
         </div>
         <div className="relative flex justify-center">
-          <img src="src/assets/aboutpic.jpeg" alt="Meghan & Paulina sitting on a couch surrounded by cats" className="max-w-[350px] xl:max-w-[450px] rounded-lg shadow-xl shadow-basic/40" />
+          <img src="./aboutpic.jpeg" alt="Meghan & Paulina sitting on a couch surrounded by cats" className="max-w-[350px] xl:max-w-[450px] rounded-lg shadow-xl shadow-basic/40" />
           <button
             type="button"
             className="xl:hidden absolute border px-5 bg-white -bottom-5 text-[32px] shadow-lg shadow-basic/40 border-melon animate-breathing"

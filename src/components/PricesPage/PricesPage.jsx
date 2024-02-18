@@ -58,8 +58,8 @@ function PricesPage() {
           </ul>
         </div>
       </div>
-      <img src="src/assets/cats/catn3.png" className="hidden min-[1170px]:block absolute w-[250px] -rotate-90 -left-32 top-64" />
-      <img src="src/assets/cats/catn3.png" className="hidden min-[1170px]:block absolute w-[250px] rotate-90 -right-32 top-64" />
+      <img src="./cats/catn3.png" className="hidden min-[1170px]:block absolute w-[250px] -rotate-90 -left-32 top-64" />
+      <img src="./cats/catn3.png" className="hidden min-[1170px]:block absolute w-[250px] rotate-90 -right-32 top-64" />
     </div>
   );
 }

@@ -7,15 +7,15 @@ function Testimonial() {
       <div className="flex flex-col flex-auto w-[350px] h-auto border shadow-md">
         <div className="flex flex-col gap-4 flex-auto  max-h-[3/5] p-5">
           <div className="flex items-center">
-            <img src="src/assets/quote.svg" className="w-10" alt="" />
+            <img src="./quote.svg" className="w-10" alt="" />
             <div className="flex ml-auto gap-1">
-              {[...Array(5)].map(() => <img src="src/assets/star.svg" className="h-4 text-yellow-400 drop-shadow-md" alt="" />)}
+              {[...Array(5)].map(() => <img src="./star.svg" className="h-4 text-yellow-400 drop-shadow-md" alt="" />)}
             </div>
           </div>
           <p className="text-[18px] text-center">Loki received exceptional care from FairyTails, making it the best decision. Highly recommend for worry-free cat sitting!</p>
         </div>
         <div className="flex items-center flex-auto gap-8 bg-melon max-h-[1/4] p-4">
-          <img src="src/assets/loki.png" className="w-[50px] border-2 border-solid rounded-[50px]" alt="" />
+          <img src="./loki.png" className="w-[50px] border-2 border-solid rounded-[50px]" alt="" />
           <p className="text-[32px] font-animal text-white">Loki</p>
         </div>
       </div>

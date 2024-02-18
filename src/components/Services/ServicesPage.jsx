@@ -38,7 +38,7 @@ function ServicesPage() {
     <div className="flex flex-col items-center relative flex-auto mt-8 w-full max-w-[1035px]">
       <div className="flex justify-center w-full">
         <img
-          src="./public/scribble-v.png"
+          src="./scribble-v.png"
           className="hidden h-[200px]"
           alt=""
         />
@@ -72,19 +72,19 @@ function ServicesPage() {
         </div>
 
         <img
-          src="./public/scribble-v.png"
+          src="./scribble-v.png"
           alt=""
           className="hidden h-[200px]"
         />
 
         <img
-          src="./public/scribble-h.png"
+          src="./scribble-h.png"
           alt=""
           className="hidden max-w-xs"
         />
       </div>
       <div className="absolute flex justify-center bottom-0 -z-20 w-screen max-w-[900px] blur-sm">
-        <img src="./public/bedroom.png" alt="" />
+        <img src="./bedroom.png" alt="" />
       </div>
     </div>
   );

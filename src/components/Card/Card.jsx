@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import services from '../../assets/services';
+import services from '../../../public/services';
 
 function Card({
   itemName,
@@ -48,7 +48,7 @@ function Card({
       ref={card}
     >
       <img
-        src={`src/assets/services/${icons[index]}.png`}
+        src={`./services/${icons[index]}.png`}
         className={`absolute ${getCatClassName(index)} hover:animate-hop`}
         alt=""
       />
@@ -65,7 +65,7 @@ function Card({
       )}
       <div className="flex flex-col items-center">
         <h1 className="text-[38px] text-basic drop-shadow-md tracking-wider">{services[itemName].title}</h1>
-        <img src="./public/line.png" alt="" />
+        <img src="./line.png" alt="" />
       </div>
       <div className="flex flex-col gap-4 items-center mt-8 leading-4">
         {services[itemName].paragraphs.map((para, paraIndex) => <p key={`para${paraIndex.toString()}`} className="text-center">{para}</p>)}

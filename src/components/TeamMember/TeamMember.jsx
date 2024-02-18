@@ -30,7 +30,7 @@ function TeamMember({
   return (
     <div className="relative flex flex-col items-center gap-4 w-full max-w-[340px]">
       <div className="relative flex items-center justify-center flex-auto h-[200px] rounded-t-lg border-x-4 border-y-0 border-t-orangutan border-b-melon border-r-melon border-l-orangutan overflow-hidden drop-shadow-lg">
-        <img ref={img} src={`src/assets/${name}.jpeg`} className="w-full top-20" />
+        <img ref={img} src={`./${name}.jpeg`} className="w-full top-20" />
       </div>
       <div className="w-[60%]   bg-white rounded-b-md h-8 drop-shadow-lg absolute -top-2" />
       <h1 className="absolute -top-10 text-melon drop-shadow-lg text-[48px] font-animal">{memberName}</h1>

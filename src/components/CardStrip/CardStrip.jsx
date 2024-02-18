@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
-import services from '../../assets/services';
+import services from '../../../public/services';
 
 const CardStrip = forwardRef(({
   stripIndex,
@@ -34,7 +34,7 @@ const CardStrip = forwardRef(({
                 <div className="bg-melon drop-shadow-lg border h-[35px] w-full" />
               </div>
             </div>
-            <img src="src/assets/line.svg" className="w-[50%] opacity-70 md:hidden" alt="" />
+            <img src="./line.svg" className="w-[50%] opacity-70 md:hidden" alt="" />
           </div>
         ))}
       </div>

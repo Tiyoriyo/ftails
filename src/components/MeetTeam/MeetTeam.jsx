@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import TeamMember from '../../TeamMember/TeamMember';
+import TeamMember from '../TeamMember/TeamMember';
 
 function MeetTeam({
   mainStateChanger,
@@ -43,9 +43,9 @@ function MeetTeam({
     <div className="flex flex-col items-center gap-10 mt-12 w-[100%] font-sulphur">
       <div className="flex flex-col lg:flex-row items-center gap-8">
         <div className="flex items-center gap-12 md:gap-24 lg:gap-20">
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block h-[200px]" />
+          <img src="./scribble-v.png" className="hidden min-[600px]:block h-[200px]" />
           <TeamMember memberName="Paulina" />
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block lg:hidden h-[200px]" />
+          <img src="./scribble-v.png" className="hidden min-[600px]:block lg:hidden h-[200px]" />
         </div>
         <div className="flex flex-row gap-2 lg:flex-col items-center">
           <p className="text-melon drop-shadow-lg">{dash}</p>
@@ -55,9 +55,9 @@ function MeetTeam({
           <p className="text-melon drop-shadow-lg">{dash}</p>
         </div>
         <div className="flex items-center gap-12  md:gap-24 lg:gap-20">
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block lg:hidden h-[200px]" />
+          <img src="./scribble-v.png" className="hidden min-[600px]:block lg:hidden h-[200px]" />
           <TeamMember memberName="Meghan" />
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block  h-[200px]" />
+          <img src="./scribble-v.png" className="hidden min-[600px]:block  h-[200px]" />
         </div>
       </div>
       <button

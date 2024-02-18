@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import InitialAbout from './InitialAbout/InitialAbout';
-import StoryContent from './StoryContent/StoryContent';
-import MeetTeam from './MeetTeam/MeetTeam';
+import InitialAbout from '../InitialAbout/InitialAbout';
+import StoryContent from '../StoryContent/StoryContent';
+import MeetTeam from '../MeetTeam/MeetTeam';
 
 function AboutPage({
   mainStateChanger,

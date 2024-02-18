@@ -25,7 +25,7 @@ function ServiceListBox({
               }}
             >
               <img
-                src={`src/assets/services/${item[0]}.png`}
+                src={`./services/${item[0]}.png`}
                 className="w-[115px]"
                 alt=""
               />
@@ -38,13 +38,13 @@ function ServiceListBox({
         </div>
         <div>
           <img
-            src="src/assets/line.svg"
+            src="./line.svg"
             alt=""
           />
         </div>
       </div>
-      <img src="src/assets/cats/catn3.png" className="absolute w-[250px] -rotate-90 -left-36 top-64" />
-      <img src="src/assets/cats/catn3.png" className="absolute w-[250px] rotate-90 -right-36 top-64" />
+      <img src="./cats/catn3.png" className="absolute w-[250px] -rotate-90 -left-36 top-64" />
+      <img src="./cats/catn3.png" className="absolute w-[250px] rotate-90 -right-36 top-64" />
     </div>
   );
 }

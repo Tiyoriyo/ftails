@@ -46,12 +46,12 @@ function DirectionButton({
     >
 
       <img
-        src={`src/assets/services/${imageList[index][direction]}`}
+        src={`./services/${imageList[index][direction]}`}
         className="w-[50px]"
         alt=""
       />
 
-      <img src={`src/assets/${direction}.svg`} alt="" />
+      <img src={`./${direction}.svg`} alt="" />
     </button>
 
   );
