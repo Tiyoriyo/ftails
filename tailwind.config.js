@@ -6,13 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        orangutan: '#F2A541',
+        melon: '#C37272',
+        basic: '#2D2D2D',
+      },
       keyframes: {
         grow: {
           '10%': { transform: 'scale(1.1)' },
           '100%': { transform: 'scale(1)' },
         },
         growhover: {
-          to: { transform: 'scale(1.1)' },
+          to: { transform: 'scale(1.05)' },
         },
         shrink: {
           from: { transform: 'scale(1.1)' },

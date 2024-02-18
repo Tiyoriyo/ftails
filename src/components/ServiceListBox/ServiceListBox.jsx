@@ -5,7 +5,7 @@ function ServiceListBox({
   activeItemStateController,
 }) {
   const items = [
-    ['house', 'home visit'],
+    ['home', 'home visit'],
     ['sleep', 'sleep over'],
     ['paw', 'mani pawi'],
     ['shower', 'ear cleaning'],
@@ -13,9 +13,9 @@ function ServiceListBox({
   ];
 
   return (
-    <div className="border border-black rounded-3xl shadow-lg bg-white/60 w-max max-w-[950px] font-sulphur p-8">
-      <div className="flex flex-col items-center gap-14">
-        <div className="flex flex-wrap gap-16 justify-center">
+    <div className="relative border border-dashed border-black rounded-lg p-10 bg-white bg-opacity-75 drop-shadow-xl w-[85%]">
+      <div className="flex flex-col gap-16 items-center">
+        <div className="flex flex-wrap justify-center gap-12">
           {items.map((item) => (
             <button
               type="button"
@@ -29,9 +29,9 @@ function ServiceListBox({
                 className="w-[115px]"
                 alt=""
               />
-              <div className="flex flex-col w-max">
-                <h1 className="uppercase tracking-widest text-4xl">{item[1]}</h1>
-                <div className="box-border h-2 bg-[#545454]" />
+              <div className="flex flex-col gap-1">
+                <h1 className="text-[32px] tracking-widest uppercase border-b border-double border-black">{item[1]}</h1>
+                <div className="w-[100%] h-[10px] bg-basic" />
               </div>
             </button>
           ))}
@@ -43,6 +43,8 @@ function ServiceListBox({
           />
         </div>
       </div>
+      <img src="src/assets/cats/catn3.png" className="absolute w-[250px] -rotate-90 -left-36 top-64" />
+      <img src="src/assets/cats/catn3.png" className="absolute w-[250px] rotate-90 -right-36 top-64" />
     </div>
   );
 }

@@ -14,9 +14,9 @@ function Testimonial() {
           </div>
           <p className="text-[18px] text-center">Loki received exceptional care from FairyTails, making it the best decision. Highly recommend for worry-free cat sitting!</p>
         </div>
-        <div className="flex items-center flex-auto gap-8 bg-[#FFE9D4] max-h-[1/4] p-4">
-          <img src="src/assets/loki.png" className="w-[50px]" alt="" />
-          <p className="text-[32px] font-animal text-[#6c635b]">Loki</p>
+        <div className="flex items-center flex-auto gap-8 bg-melon max-h-[1/4] p-4">
+          <img src="src/assets/loki.png" className="w-[50px] border-2 border-solid rounded-[50px]" alt="" />
+          <p className="text-[32px] font-animal text-white">Loki</p>
         </div>
       </div>
     </div>

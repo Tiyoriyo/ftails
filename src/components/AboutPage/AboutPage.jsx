@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import InitialAbout from '../InitialAbout/InitialAbout';
-import StoryContent from '../StoryContent/StoryContent';
-import MeetTeam from '../MeetTeam/MeetTeam';
+import InitialAbout from './InitialAbout/InitialAbout';
+import StoryContent from './StoryContent/StoryContent';
+import MeetTeam from './MeetTeam/MeetTeam';
 
-function AboutPage() {
+function AboutPage({
+  mainStateChanger,
+}) {
   const [state, setState] = useState('initial');
 
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full items-center">
       {state === 'initial' && (
         <InitialAbout
           stateChanger={setState}
@@ -19,7 +21,9 @@ function AboutPage() {
         />
       )}
       {state === 'meetteam' && (
-        <MeetTeam />
+        <MeetTeam
+          mainStateChanger={mainStateChanger}
+        />
       )}
     </div>
   );

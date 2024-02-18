@@ -2,10 +2,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import ServiceDescBox from '../ServiceDescBox/ServiceDescBox';
 import ServiceListBox from '../ServiceListBox/ServiceListBox';
+import PricesPage from '../PricesPage/PricesPage';
+import ServicePriceButton from '../ServicePriceButton/ServicePriceButton';
 
 function ServicesPage() {
   const [width, setWidth] = useState(window.innerWidth);
   const [item, setItem] = useState(null);
+  const [state, setState] = useState('Services');
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
@@ -18,53 +21,70 @@ function ServicesPage() {
     };
   }, []);
 
-  const stateController = useCallback(
+  const itemController = useCallback(
     (service) => setItem(service),
     [],
   );
 
-  const isMobile = width < 1280;
+  function changeButtonState() {
+    const newState = state === 'Services' ? 'Prices' : 'Services';
+    setState(newState);
+  }
+
+  const isMobile = width < 850;
   const isActive = !isMobile && item;
 
   return (
-    <div className="flex flex-auto w-full justify-center animate-load">
-      <div className="flex flex-col lg:flex-row items-center gap-8">
+    <div className="flex flex-col items-center relative flex-auto mt-8 w-full max-w-[1035px]">
+      <div className="flex justify-center w-full">
+        <img
+          src="./public/scribble-v.png"
+          className="hidden h-[200px]"
+          alt=""
+        />
+        <div className="flex flex-col gap-16 min-[850px]:gap-4 items-center w-full">
+          <ServicePriceButton
+            state={state}
+            stateController={changeButtonState}
+          />
+          {/* <img src="src/assets/line.svg" className="mb-8 w-[75%]" /> */}
+          {state === 'Prices' && (
+          <PricesPage />
+          )}
+          {!isActive && !isMobile && state !== 'Prices' && (
+          <ServiceListBox
+            activeItemStateController={itemController}
+          />
+          )}
+          {isActive && state !== 'Prices' && (
+          <ServiceDescBox
+            service={item}
+            itemController={itemController}
+
+          />
+          )}
+          {isMobile && state !== 'Prices' && (
+          <ServiceDescBox
+            service="house"
+            stateController={setState}
+          />
+          )}
+        </div>
 
         <img
           src="./public/scribble-v.png"
-          className="hidden lg:block h-[200px] opacity-60"
           alt=""
-        />
-        {!isActive && !isMobile && (
-          <ServiceListBox
-            activeItemStateController={stateController}
-          />
-        )}
-        {isActive && (
-          <ServiceDescBox
-            service={item}
-            stateController={stateController}
-          />
-        )}
-        {isMobile && (
-          <ServiceDescBox
-            service="house"
-          />
-        )}
-        <img
-          src="./public/scribble-v.png"
-          alt=""
-          className="hidden lg:block h-[200px] opacity-60"
+          className="hidden h-[200px]"
         />
 
         <img
           src="./public/scribble-h.png"
           alt=""
-          className="w-2/5 max-w-xs mt-16 lg:hidden"
+          className="hidden max-w-xs"
         />
       </div>
-      <div className="absolute -z-10 w-[100%] h-max max-w-[900px]">
-        <img src="./public/bedroom.png" className="blur-sm opacity-50 bottom-0" alt="" />
+      <div className="absolute flex justify-center bottom-0 -z-20 w-screen max-w-[900px] blur-sm">
+        <img src="./public/bedroom.png" alt="" />
       </div>
     </div>
   );

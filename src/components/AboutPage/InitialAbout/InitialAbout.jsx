@@ -43,7 +43,7 @@ function InitialAbout({
       </div>
       <button
         type="button"
-        className="hidden xl:block border border-black px-5 bg-white text-[42px] rounded-md drop-shadow-lg tracking-widest animate-breathing  hover:border-[#C37272] hover:shadow-[#C37272]/40 hover:text-[#C37272]"
+        className="hidden xl:block border border-black px-5 bg-white text-[42px] rounded-md drop-shadow-lg tracking-widest animate-breathing  hover:border-melon hover:shadow-melon/40 hover:text-melon"
         onClick={() => { stateChanger('story'); }}
       >
         Our Story :&#41;

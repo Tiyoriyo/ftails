@@ -7,7 +7,7 @@ function PhoneDirectionButtons({
   index,
 }) {
   return (
-    <div className="flex lg:hidden gap-8 mt-8">
+    <div>
       <DirectionButton
         itemController={itemController}
         index={index}

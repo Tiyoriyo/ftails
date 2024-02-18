@@ -9,11 +9,11 @@ function DirectionButton({
 }) {
   const imageList = {
     0: {
-      left: null,
+      left: 'medication.png',
       right: 'sleep.png',
     },
     1: {
-      left: 'house.png',
+      left: 'home.png',
       right: 'paw.png',
     },
     2: {
@@ -26,7 +26,7 @@ function DirectionButton({
     },
     4: {
       left: 'shower.png',
-      right: null,
+      right: 'home.png',
     },
   };
 
@@ -36,24 +36,24 @@ function DirectionButton({
   const ariaLabel = direction === 'left' ? 'Previous Item' : 'Next Item';
 
   return (
-    <div className={`${hiddenFunctionality} items-center ${index === maxIndex ? 'opacity-0' : 'opacity-1'}`}>
-      {!phone && (
-        <img
-          className="w-14"
-          src={`src/assets/services/${imageList[index][direction]}`}
-          alt=""
-        />
-      )}
-      <button
-        type="button"
-        aria-label={ariaLabel}
-        onClick={() => itemController(direction)}
-        onMouseOut={undefined}
-        onBlur={() => undefined}
-      >
-        <img src={`src/assets/${direction}.svg`} alt="" />
-      </button>
-    </div>
+    <button
+      type="button"
+      className="hover:animate-growhover"
+      aria-label={ariaLabel}
+      onClick={() => itemController(direction)}
+      onMouseOut={undefined}
+      onBlur={() => undefined}
+    >
+
+      <img
+        src={`src/assets/services/${imageList[index][direction]}`}
+        className="w-[50px]"
+        alt=""
+      />
+
+      <img src={`src/assets/${direction}.svg`} alt="" />
+    </button>
+
   );
 }
 

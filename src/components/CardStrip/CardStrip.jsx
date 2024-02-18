@@ -12,22 +12,30 @@ const CardStrip = forwardRef(({
   const moveStrip = itemController;
 
   return (
-    <div
-      className="flex items-center h-[650px] overflow-hidden w-[420px] xs:w-[468.75px] md:w-[500px]"
-    >
+    <div className="flex justify-center w-full min-[850px]:w-[550px] min-[850px]:h-[570px] min-[850px]:overflow-hidden">
       <div
         ref={ref}
-        className="flex gap-24 pl-[50px] transition-[left] duration-500 relative"
+        className="flex relative flex-col min-[850px]:flex-row gap-24 items-center w-full min-[850px]:pl-12 transition-[left] duration-500"
       >
         {Object.keys(services).map((item, index) => (
-          <Card
-            key={services[item].key}
-            itemName={item}
-            index={index}
-            stripIndex={sIndex}
-            itemController={moveStrip}
-            stateController={stateController}
-          />
+          <div className="flex flex-col items-center gap-16 w-full">
+            <div className="relative flex justify-center items-center w-full">
+              <Card
+                key={services[item].key}
+                itemName={item}
+                index={index}
+                stripIndex={sIndex}
+                itemController={moveStrip}
+                stateController={stateController}
+              />
+              <div className="absolute -z-10 w-full h-[250px] flex flex-col justify-evenly items-center">
+                <div className="bg-basic drop-shadow-lg border h-[35px] w-full" />
+                <div className="bg-basic drop-shadow-lg border h-[35px] w-full" />
+                <div className="bg-melon drop-shadow-lg border h-[35px] w-full" />
+              </div>
+            </div>
+            <img src="src/assets/line.svg" className="w-[50%] opacity-70 md:hidden" alt="" />
+          </div>
         ))}
       </div>
     </div>

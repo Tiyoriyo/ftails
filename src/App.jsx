@@ -4,12 +4,13 @@ import HomePage from './components/HomePage/HomePage';
 import ServicesPage from './components/Services/ServicesPage';
 import AboutPage from './components/AboutPage/AboutPage';
 import ContactPage from './components/ContactPage/ContactPage';
+import AffiliationPage from './components/AffiliationPage/AffiliationPage';
 
 function App() {
   const [state, setState] = useState('home');
 
   return (
-    <div className="flex flex-col items-center w-[95%]">
+    <div className="flex flex-col items-center w-[95%] h-[100%]">
       <Header
         stateChanger={setState}
       />
@@ -17,13 +18,18 @@ function App() {
         <HomePage />
       )}
       {state === 'about' && (
-        <AboutPage />
+        <AboutPage
+          mainStateChanger={setState}
+        />
       )}
       {state === 'contact' && (
         <ContactPage />
       )}
       {state === 'services' && (
         <ServicesPage />
+      )}
+      {state === 'affiliation' && (
+        <AffiliationPage />
       )}
     </div>
   );
