@@ -2,10 +2,9 @@ import React from 'react';
 
 function Testimonial() {
   return (
-    <div className="flex flex-col items-center mt-4 gap-4 font-thasadith  w-[100%]">
-      <h1 className="text-[28px] tracking-widest">TESTMINONIALS</h1>
+    <div className="flex flex-col items-center mt-auto mb-8 gap-4 font-thasadith">
       <div className="flex flex-col flex-auto w-[350px] h-auto border shadow-md">
-        <div className="flex flex-col gap-4 flex-auto  max-h-[3/5] p-5">
+        <div className="flex flex-col gap-4 flex-auto  bg-white max-h-[3/5] p-5">
           <div className="flex items-center">
             <img src="./quote.svg" className="w-10" alt="" />
             <div className="flex ml-auto gap-1">
@@ -14,7 +13,7 @@ function Testimonial() {
           </div>
           <p className="text-[18px] text-center">Loki received exceptional care from FairyTails, making it the best decision. Highly recommend for worry-free cat sitting!</p>
         </div>
-        <div className="flex items-center flex-auto gap-8 bg-melon max-h-[1/4] p-4">
+        <div className="flex items-center flex-auto gap-8 bg-gray-50 max-h-[1/4] p-4">
           <img src="./loki.png" className="w-[50px] border-2 border-solid rounded-[50px]" alt="" />
           <p className="text-[32px] font-animal text-white">Loki</p>
         </div>

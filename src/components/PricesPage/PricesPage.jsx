@@ -18,8 +18,8 @@ function PricesPage() {
   ];
 
   return (
-    <div className="relative flex flex-col items-center mb-18 w-full text-basic md:tracking-widest">
-      <div className="flex flex-col gap-4 border border-black rounded-sm bg-white w-[95%] font-thasadith drop-shadow-lg py-4 pb-12 px-4 md:px-8 mb-8">
+    <div className="relative flex flex-col items-center  w-full text-basic md:tracking-widest animate-fadein">
+      <div className="flex flex-col gap-2 border border-black rounded-sm bg-white w-[800px] font-thasadith drop-shadow-lg py-4 pb-12 px-4 md:px-8 mb-8">
         <h1 className="font-extrabold tracking-widest text-[36px] md:text-[48px] self-center">Rates</h1>
         <div className="flex flex-col">
           <h2 className="border-b border-basic text-[24px] md:text-[28px] font-bold md:text-[42px]">Main Services</h2>
@@ -58,8 +58,6 @@ function PricesPage() {
           </ul>
         </div>
       </div>
-      <img src="./cats/catn3.png" className="hidden min-[1170px]:block absolute w-[250px] -rotate-90 -left-32 top-64" />
-      <img src="./cats/catn3.png" className="hidden min-[1170px]:block absolute w-[250px] rotate-90 -right-32 top-64" />
     </div>
   );
 }

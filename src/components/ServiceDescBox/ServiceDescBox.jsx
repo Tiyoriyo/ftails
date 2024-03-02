@@ -1,62 +1,24 @@
 import React, {
-  useCallback, useEffect, useRef, useState,
+  useEffect, useRef, useState,
 } from 'react';
 import './ServiceDescBox.css';
 import PropTypes from 'prop-types';
 import CardStrip from '../CardStrip/CardStrip';
-import ServicePriceButton from '../ServicePriceButton/ServicePriceButton';
-import DirectionButton from '../DirectionButton/DirectionButton';
 
 function ServiceDescBox({
   service,
   itemController,
-  stateController,
 }) {
-  const [state, setState] = useState('Services');
-  const items = ['home', 'sleep', 'paw', 'shower', 'medication'];
-  const [sIndex, setSIndex] = useState(items.indexOf(service)); // Service Index
+  const items = [
+    ['home', 'home visit'],
+    ['sleep', 'sleep over'],
+    ['medication', 'medication'],
+    ['addons', 'add-ons'],
+  ];
+
+  const services = ['home', 'sleep', 'medication', 'addons'];
+  const [sIndex, setSIndex] = useState(services.indexOf(service)); // Service Index
   const strip = useRef(null);
-
-  const [width, setWidth] = useState(window.innerWidth);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange);
-    return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
-    };
-  }, []);
-
-  const moveStrip = useCallback((direction) => {
-    const move = strip.current.children[0].offsetWidth + 96;
-    const baseCalc = sIndex * move;
-    const coordinate = baseCalc + (direction === 'right' ? move : -move);
-
-    if (!((direction === 'right' && sIndex === 4) || (direction === 'left' && sIndex === 0))) {
-      strip.current.style.left = `${-coordinate}px`;
-      setSIndex(sIndex + (direction === 'right' ? 1 : -1));
-    }
-
-    if (direction === 'right' && sIndex === 4) {
-      strip.current.style.left = '0px';
-      setSIndex(0);
-    }
-
-    if (direction === 'left' && sIndex === 0) {
-      strip.current.style.left = '2384px';
-      setSIndex(4);
-    }
-  }, [sIndex]);
-
-  const moveToStrip = (moveIndex) => {
-    const move = strip.current.children[0].offsetWidth + 96;
-    const coordinate = moveIndex * move;
-    strip.current.style.left = `${-coordinate}px`;
-    setSIndex(moveIndex);
-  };
 
   const renderStrip = () => {
     const move = strip.current.children[0].offsetWidth + 96;
@@ -64,7 +26,12 @@ function ServiceDescBox({
     strip.current.style.left = `${-coordinate}px`;
   };
 
-  const isMobile = width < 850;
+  const funcoo = (x, y) => {
+    itemController(x);
+    setSIndex(y);
+  };
+
+  const isMobile = false;
 
   useEffect(() => {
     if (!isMobile) {
@@ -73,43 +40,59 @@ function ServiceDescBox({
   });
 
   return (
-    <div className="flex items-center gap-4 justify-center w-full">
-      {!isMobile && (
-        <DirectionButton
-          itemController={moveStrip}
-          index={sIndex}
-          direction="left"
-        />
-      )}
-      <div className="relative flex flex-col items-center">
-        <CardStrip
-          ref={strip}
-          stripIndex={sIndex}
-          itemController={moveStrip}
-          stateController={itemController}
-        />
-        {isMobile && (
-        <div className="absolute bottom-5 flex gap-1">
-          <span>&#8592;</span>
-          <div className="flex gap-1 flex-grow-0 max-h-fit">
-            {[...Array(5)].map((item, index) => (
-              <div
-                className={`${index === sIndex ? 'bg-melon' : 'bg-melon/75'} p-[10px] rounded-[10px] drop-shadow-md`}
-                onClick={() => { moveToStrip(index); }}
-              />
-            ))}
-          </div>
-          <span>&#8594;</span>
-        </div>
-        )}
+    <div className="flex items-center gap-4 justify-center w-full animate-fadein">
+      <div className="flex flex-col justify-evenly">
+        {items.map((item, index) => (
+          index < 2
+            ? (
+              <button
+                type="button"
+                className="flex  items-center"
+                onClick={() => {
+                  funcoo(item[0], index);
+                }}
+              >
+                <div className="flex flex-col gap-1">
+                  <h2 className="border-b-2 border-basic/40 font-thasadith text-[24px] tracking-wide">{item[1]}</h2>
+                </div>
+                <img
+                  src={`./services/${item[0]}.png`}
+                  className={`w-[150px] drop-shadow-lg ${sIndex === index ? 'opacity-100' : 'opacity-50'} hover:animate-growhover`}
+                  alt=""
+                />
+
+              </button>
+            ) : null
+        ))}
       </div>
-      {!isMobile && (
-        <DirectionButton
-          itemController={moveStrip}
-          index={sIndex}
-          direction="right"
-        />
-      )}
+      <CardStrip
+        ref={strip}
+        stripIndex={sIndex}
+      />
+      <div className="flex flex-col justify-evenly">
+        {items.map((item, index) => (
+          index > 1
+            ? (
+              <button
+                type="button"
+                className="flex  items-center"
+                onClick={() => {
+                  funcoo(item[0], index);
+                }}
+              >
+                <img
+                  src={`./services/${item[0]}.png`}
+                  className={`w-[150px] drop-shadow-lg ${sIndex === index ? 'opacity-100' : 'opacity-50'} hover:animate-growhover`}
+                  alt=""
+                />
+                <div className="flex flex-col gap-1">
+                  <h2 className="border-b-2 border-basic/40 font-thasadith text-[24px] tracking-wide">{item[1]}</h2>
+                </div>
+
+              </button>
+            ) : null
+        ))}
+      </div>
     </div>
 
   );

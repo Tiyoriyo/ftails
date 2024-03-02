@@ -1,5 +1,5 @@
 const services = {
-  homeVisit: {
+  home: {
     key: 'homevisit',
     title: 'home visit',
     paragraphs: [
@@ -13,7 +13,7 @@ const services = {
       ['prices ', 'may vary based on location'],
     ],
   },
-  sleepOver: {
+  sleep: {
     key: 'sleepover',
     title: 'sleep over',
     paragraphs: [
@@ -28,27 +28,7 @@ const services = {
       ['prices ', 'may vary based on location.'],
     ],
   },
-  maniPawi: {
-    key: 'manipawi',
-    title: 'Mani Pawi',
-    paragraphs: [
-      'Our Dream Team will help you with clipping your furbabies nails to protect you, your family and your furbaby. Your furniture will also benefit from this service.',
-    ],
-    extraInfo: [
-      ['price ', '20 aed'],
-    ],
-  },
-  earClean: {
-    key: 'earclean',
-    title: 'Ear Cleaning',
-    paragraphs: [
-      'Our Dream Team will help with cleaning your furbabies ears, this can help keep any ear issues, like infections or ear mites, at bay',
-    ],
-    extraInfo: [
-      ['price ', '10 aed'],
-    ],
-  },
-  adminMed: {
+  medication: {
     key: 'adminmed',
     title: 'Administration of Medication',
     paragraphs: [
@@ -57,6 +37,16 @@ const services = {
     extraInfo: [
       ['price ', '35 - 50 aed'],
       ['price ', 'may vary based on medication type'],
+    ],
+  },
+  addons: {
+    key: 'manipawi',
+    title: 'Mani Pawi',
+    paragraphs: [
+      'Our Dream Team will help you with clipping your furbabies nails to protect you, your family and your furbaby. Your furniture will also benefit from this service.',
+    ],
+    extraInfo: [
+      ['price ', '20 aed'],
     ],
   },
 };

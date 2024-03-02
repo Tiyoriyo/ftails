@@ -14,7 +14,7 @@ function NavBtn({ pageName, stateChanger }) {
   return (
     <button
       type="button"
-      className="w-[175px]"
+      className="w-[225px] hover:animate-growhover"
       onClick={() => stateChanger(pageName)}
       onMouseOut={undefined}
       onBlur={() => undefined}

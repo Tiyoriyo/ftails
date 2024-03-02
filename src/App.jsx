@@ -10,7 +10,7 @@ function App() {
   const [state, setState] = useState('home');
 
   return (
-    <div className="flex flex-col items-center w-[95%] h-[100%]">
+    <div className="flex flex-col items-center w-max h-[100%]">
       <Header
         stateChanger={setState}
       />

@@ -38,7 +38,7 @@ function DirectionButton({
   return (
     <button
       type="button"
-      className="hover:animate-growhover"
+      className="flex flex-col items-center hover:animate-growhover"
       aria-label={ariaLabel}
       onClick={() => itemController(direction)}
       onMouseOut={undefined}
@@ -47,7 +47,7 @@ function DirectionButton({
 
       <img
         src={`./services/${imageList[index][direction]}`}
-        className="w-[50px]"
+        className="w-[75px]"
         alt=""
       />
 

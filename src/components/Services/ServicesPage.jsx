@@ -1,25 +1,13 @@
 /* eslint-disable max-len */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import ServicePriceButton from '../ServicePriceButton/ServicePriceButton';
 import ServiceDescBox from '../ServiceDescBox/ServiceDescBox';
 import ServiceListBox from '../ServiceListBox/ServiceListBox';
 import PricesPage from '../PricesPage/PricesPage';
-import ServicePriceButton from '../ServicePriceButton/ServicePriceButton';
 
 function ServicesPage() {
-  const [width, setWidth] = useState(window.innerWidth);
   const [item, setItem] = useState(null);
   const [state, setState] = useState('Services');
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange);
-    return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
-    };
-  }, []);
 
   const itemController = useCallback(
     (service) => setItem(service),
@@ -31,36 +19,29 @@ function ServicesPage() {
     setState(newState);
   }
 
-  const isMobile = width < 850;
+  const isMobile = false;
   const isActive = !isMobile && item;
 
   return (
-    <div className="flex flex-col items-center relative flex-auto mt-8 w-full max-w-[1035px]">
+    <div className="flex flex-col items-center relative flex-auto mt-12 w-full animate-fadein">
       <div className="flex justify-center w-full">
-        <img
-          src="./scribble-v.png"
-          className="hidden h-[200px]"
-          alt=""
-        />
         <div className="flex flex-col gap-16 min-[850px]:gap-4 items-center w-full">
           <ServicePriceButton
             state={state}
             stateController={changeButtonState}
           />
-          {/* <img src="src/assets/line.svg" className="mb-8 w-[75%]" /> */}
           {state === 'Prices' && (
           <PricesPage />
           )}
           {!isActive && !isMobile && state !== 'Prices' && (
           <ServiceListBox
-            activeItemStateController={itemController}
+            itemController={itemController}
           />
           )}
           {isActive && state !== 'Prices' && (
           <ServiceDescBox
             service={item}
             itemController={itemController}
-
           />
           )}
           {isMobile && state !== 'Prices' && (
@@ -83,8 +64,8 @@ function ServicesPage() {
           className="hidden max-w-xs"
         />
       </div>
-      <div className="absolute flex justify-center bottom-0 -z-20 w-screen max-w-[900px] blur-sm">
-        <img src="./bedroom.png" alt="" />
+      <div className={`absolute flex justify-center bottom-0 -z-20 w-screen ${isActive ? 'blur' : null} transition-[-webkit-filter] duration-700 opacity-50`}>
+        <img src="./forestbackground.png" alt="" />
       </div>
     </div>
   );

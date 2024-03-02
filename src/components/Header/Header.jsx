@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo';
 
 function Header({ stateChanger }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <Logo />
       <NavBar
         stateChanger={stateChanger}

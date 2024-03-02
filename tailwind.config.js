@@ -7,9 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        orangutan: '#F2A541',
-        melon: '#C37272',
-        basic: '#2D2D2D',
+        beige: '#F7F1EB',
+        sand: '#DFD9C4',
+        foundation: '#D1B195',
+        blush: '#C7998C',
+        black: '#292929',
       },
       keyframes: {
         grow: {
@@ -53,6 +55,10 @@ export default {
             transform: 'translateY(-25%) rotate(-5deg)',
           },
         },
+        fadein: {
+          from: { opacity: 0 },
+          to: { opacity: 100 },
+        },
       },
       screens: {
         xs: '490px',
@@ -66,6 +72,7 @@ export default {
         load: 'load 0.3s ease-in-out forwards',
         breathing: 'breathing 3s ease-in-out infinite',
         hop: 'hop 0.5s ease-in-out forwards',
+        fadein: 'fadein 0.5s ease-in-out forwards',
       },
       transitionProperty: {
         height: 'max-height',

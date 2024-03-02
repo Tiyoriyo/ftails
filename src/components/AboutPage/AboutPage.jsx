@@ -25,6 +25,9 @@ function AboutPage({
           mainStateChanger={mainStateChanger}
         />
       )}
+      <div className="absolute flex justify-center bottom-0 -z-20 w-screen opacity-50">
+        <img src="./grassbackground.png" alt="" />
+      </div>
     </div>
   );
 }
