@@ -12,7 +12,7 @@ function ServiceListBox({
   ];
 
   return (
-    <div className="relative  w-full select-none mt-10 animate-fadein">
+    <div className="relative  w-full select-none mt-24 animate-fadein">
       <div className="flex gap-16 justify-center">
         <div className="flex w-full justify-evenly">
           {items.map((item) => (

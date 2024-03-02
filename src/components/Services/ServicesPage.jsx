@@ -6,7 +6,7 @@ import ServiceListBox from '../ServiceListBox/ServiceListBox';
 import PricesPage from '../PricesPage/PricesPage';
 
 function ServicesPage() {
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState('home');
   const [state, setState] = useState('Services');
 
   const itemController = useCallback(
@@ -19,11 +19,10 @@ function ServicesPage() {
     setState(newState);
   }
 
-  const isMobile = false;
-  const isActive = !isMobile && item;
+  const isActive = item;
 
   return (
-    <div className="flex flex-col items-center relative flex-auto mt-12 w-full animate-fadein">
+    <div className="flex flex-col items-center relative flex-auto mt-6 w-full animate-fadein">
       <div className="flex justify-center w-full">
         <div className="flex flex-col gap-16 min-[850px]:gap-4 items-center w-full">
           <ServicePriceButton
@@ -33,7 +32,7 @@ function ServicesPage() {
           {state === 'Prices' && (
           <PricesPage />
           )}
-          {!isActive && !isMobile && state !== 'Prices' && (
+          {!isActive && state !== 'Prices' && (
           <ServiceListBox
             itemController={itemController}
           />
@@ -42,12 +41,6 @@ function ServicesPage() {
           <ServiceDescBox
             service={item}
             itemController={itemController}
-          />
-          )}
-          {isMobile && state !== 'Prices' && (
-          <ServiceDescBox
-            service="house"
-            stateController={setState}
           />
           )}
         </div>

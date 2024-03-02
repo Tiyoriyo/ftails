@@ -8,11 +8,17 @@ import AffiliationPage from './components/AffiliationPage/AffiliationPage';
 
 function App() {
   const [state, setState] = useState('home');
+  const [index, setIndex] = useState(0);
+
+  const stateChanger = (x) => {
+    setState(x);
+    setIndex((prev) => prev + 1);
+  };
 
   return (
     <div className="flex flex-col items-center w-max h-[100%]">
       <Header
-        stateChanger={setState}
+        stateChanger={stateChanger}
       />
       {state === 'home' && (
         <HomePage />

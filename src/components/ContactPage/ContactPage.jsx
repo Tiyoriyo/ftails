@@ -11,7 +11,7 @@ function ContactPage() {
 
   return (
     <div className="flex flex-col items-center justify-center font-sulphur mt-8 mb-24 min-[1090px]:mb-0 w-full animate-fadein">
-      <div className="flex flex-col items-center w-full justify-evenly">
+      <div className="flex items-center w-full justify-evenly">
         <div className="flex flex-col justify-center items-center gap-8 min-[1090px]:gap-24 ">
           <div className="flex flex-col items-center self-center max-w-[600px]">
             <img src="./cats/catn3.png" className="w-[175px] hover:animate-hop" alt="" />

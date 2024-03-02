@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import './ServiceDescBox.css';
 import PropTypes from 'prop-types';
+import Card from '../Card/Card';
 import CardStrip from '../CardStrip/CardStrip';
 
 function ServiceDescBox({
@@ -40,8 +41,8 @@ function ServiceDescBox({
   });
 
   return (
-    <div className="flex items-center gap-4 justify-center w-full animate-fadein">
-      <div className="flex flex-col justify-evenly">
+    <div className="flex items-center gap-4 w-full animate-fadein">
+      <div className="flex flex-col justify-evenly ml-auto  w-[280px]">
         {items.map((item, index) => (
           index < 2
             ? (
@@ -69,7 +70,10 @@ function ServiceDescBox({
         ref={strip}
         stripIndex={sIndex}
       />
-      <div className="flex flex-col justify-evenly">
+      {/* <div className="flex">
+        <Card itemName="home" index={0} />
+      </div> */}
+      <div className="flex flex-col justify-evenly mr-auto w-[280px]">
         {items.map((item, index) => (
           index > 1
             ? (

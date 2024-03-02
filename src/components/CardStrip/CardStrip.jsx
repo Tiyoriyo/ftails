@@ -3,10 +3,10 @@ import Card from '../Card/Card';
 import services from '../../../public/services';
 
 const CardStrip = forwardRef((props, ref) => (
-  <div className="flex justify-center w-full min-[850px]:w-[550px] min-[850px]:h-[570px] min-[850px]:overflow-x-hidden">
+  <div className="relative flex items-center min-[850px]:w-[550px] min-[850px]:h-[570px] min-[850px]:overflow-hidden">
     <div
       ref={ref}
-      className="flex relative flex-col min-[850px]:flex-row gap-24 items-center w-full min-[850px]:pl-12 transition-[left] duration-500"
+      className="flex absolute gap-24 items-center pl-12 transition-[left] duration-500"
     >
       {Object.keys(services).map((item, index) => (
         <div className="relative flex justify-center items-center w-full">
