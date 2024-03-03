@@ -37,36 +37,25 @@ function MeetTeam({
     ],
   };
 
-  const dash = isMobile ? '-' : '|';
+  const dash = '|';
 
   return (
-    <div className="flex flex-col items-center gap-10 mt-12 w-[100%] font-sulphur">
-      <div className="flex flex-col lg:flex-row items-center gap-8">
-        <div className="flex items-center gap-12 md:gap-24 lg:gap-20">
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block h-[200px]" />
-          <TeamMember memberName="Paulina" />
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block lg:hidden h-[200px]" />
+    <div className="flex flex-col flex-auto items-center gap-10 mt-12 w-[100%] font-sulphur animate-fadein">
+      <div className="flex items-center gap-8 w-full justify-center">
+
+        <TeamMember memberName="Paulina" />
+
+        <div className="flex flex-col gap-2 items-center self-center">
+          <p className="text-blush drop-shadow-lg">{dash}</p>
+          <p className="text-blush drop-shadow-lg">{dash}</p>
+          <p className="text-blush drop-shadow-lg">&#x25CF;</p>
+          <p className="text-blush drop-shadow-lg">{dash}</p>
+          <p className="text-blush drop-shadow-lg">{dash}</p>
         </div>
-        <div className="flex flex-row gap-2 lg:flex-col items-center">
-          <p className="text-melon drop-shadow-lg">{dash}</p>
-          <p className="text-melon drop-shadow-lg">{dash}</p>
-          <p className="text-melon drop-shadow-lg">&#x25CF;</p>
-          <p className="text-melon drop-shadow-lg">{dash}</p>
-          <p className="text-melon drop-shadow-lg">{dash}</p>
-        </div>
-        <div className="flex items-center gap-12  md:gap-24 lg:gap-20">
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block lg:hidden h-[200px]" />
-          <TeamMember memberName="Meghan" />
-          <img src="public/scribble-v.png" className="hidden min-[600px]:block  h-[200px]" />
-        </div>
+
+        <TeamMember memberName="Meghan" />
+
       </div>
-      <button
-        type="button"
-        className="hidden xl:block w-fit border px-10 py-3 rounded-lg bg-white -bottom-5 text-[36px] shadow-lg border-black animate-breathing hover:border-melon hover:shadow-melon/40 hover:text-melon"
-        onClick={() => { mainStateChanger('services'); }}
-      >
-        Services
-      </button>
     </div>
   );
 }

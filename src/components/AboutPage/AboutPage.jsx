@@ -9,7 +9,7 @@ function AboutPage({
   const [state, setState] = useState('initial');
 
   return (
-    <div className="flex justify-center w-full items-center">
+    <div className="flex justify-center w-full h-full">
       {state === 'initial' && (
         <InitialAbout
           stateChanger={setState}

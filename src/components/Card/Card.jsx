@@ -18,7 +18,7 @@ function Card({
     >
       <img
         src={`./services/${icons[index]}.png`}
-        className="absolute w-28 -top-16 hover:animate-hop"
+        className="absolute w-28 -top-16 hover:animate-hop z-50"
         alt=""
       />
       <div className="flex flex-col items-center">
