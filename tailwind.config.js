@@ -57,7 +57,15 @@ export default {
         },
         fadein: {
           from: { opacity: 0 },
-          to: { opacity: 100 },
+          to: { opacity: 1 },
+        },
+        fadein50: {
+          from: { opacity: 0 },
+          to: { opacity: 0.5 },
+        },
+        fadein90: {
+          from: { opacity: 0 },
+          to: { opacity: 0.9 },
         },
       },
       screens: {
@@ -73,6 +81,8 @@ export default {
         breathing: 'breathing 3s ease-in-out infinite',
         hop: 'hop 0.5s ease-in-out forwards',
         fadein: 'fadein 0.5s ease-in-out forwards',
+        fadein50: 'fadein50 0.5s ease-in-out forwards',
+        fadein90: 'fadein90 0.5s ease-in-out forwards',
       },
       transitionProperty: {
         height: 'max-height',

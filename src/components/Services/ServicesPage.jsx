@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React, { useCallback, useState } from 'react';
-import ServicePriceButton from '../ServicePriceButton/ServicePriceButton';
+import Switch from '../Switch/Switch';
 import ServiceDescBox from '../ServiceDescBox/ServiceDescBox';
 import ServiceListBox from '../ServiceListBox/ServiceListBox';
 import PricesPage from '../PricesPage/PricesPage';
@@ -25,9 +25,11 @@ function ServicesPage() {
     <div className="flex flex-col items-center relative flex-auto mt-6 w-full animate-fadein">
       <div className="flex justify-center w-full">
         <div className="flex flex-col gap-16 min-[850px]:gap-4 items-center w-full">
-          <ServicePriceButton
+          <Switch
             state={state}
-            stateController={changeButtonState}
+            stateController={setState}
+            header1="Services"
+            header2="Prices"
           />
           {state === 'Prices' && (
           <PricesPage />

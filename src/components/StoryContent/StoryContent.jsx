@@ -15,12 +15,12 @@ function StoryContent({
 
   useState(() => {
     setTimeout(() => { item1.current.style.opacity = 100; }, 0);
-    setTimeout(() => { item2.current.style.opacity = 100; }, 500);
-    setTimeout(() => { item3.current.style.opacity = 100; }, 1000);
-    setTimeout(() => { item4.current.style.opacity = 100; }, 1500);
-    setTimeout(() => { item5.current.style.opacity = 100; }, 2000);
-    setTimeout(() => { item6.current.style.opacity = 100; }, 2500);
-    setTimeout(() => { item7.current.style.opacity = 100; }, 3000);
+    setTimeout(() => { item2.current.style.opacity = 100; }, 0);
+    setTimeout(() => { item3.current.style.opacity = 100; }, 0);
+    setTimeout(() => { item4.current.style.opacity = 100; }, 0);
+    setTimeout(() => { item5.current.style.opacity = 100; }, 0);
+    setTimeout(() => { item6.current.style.opacity = 100; }, 500);
+    setTimeout(() => { item7.current.style.opacity = 100; }, 1000);
   });
 
   return (
@@ -41,9 +41,9 @@ function StoryContent({
           <button
             ref={item7}
             type="button"
-            className="absolute border px-5 bg-white -bottom-5 text-[32px] shadow-lg shadow-basic/40 border-blush animate-breathing transition-opacity duration-[1.5s]"
+            className="absolute border px-5 bg-white -bottom-5 text-[32px] shadow-lg shadow-basic/40 border-blush animate-breathing rounded-lg transition-opacity duration-[1.5s]"
             style={{ opacity: 0 }}
-            onClick={() => { stateChanger('meetteam'); }}
+            onClick={() => { stateChanger('selectteam'); }}
           >
             Meet the team :&#41;
           </button>

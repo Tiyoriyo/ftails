@@ -11,7 +11,7 @@ function NavBar({ stateChanger }) {
     >
       <NavBtn pageName="home" stateChanger={stateChanger} />
       <NavBtn pageName="about" stateChanger={stateChanger} />
-      <NavBtn pageName="contact" stateChanger={stateChanger} />
+      <NavBtn pageName="testimonial" stateChanger={stateChanger} />
       <NavBtn pageName="services" stateChanger={stateChanger} />
       <NavBtn pageName="affiliation" stateChanger={stateChanger} />
     </div>
