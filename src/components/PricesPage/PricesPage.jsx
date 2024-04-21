@@ -26,7 +26,10 @@ function PricesPage() {
           <ul className="flex flex-col gap-1 pt-1">
             {mainServiceItems.map((item) => (
               <div className="flex border-b border-gray-400 border-dotted">
-                <li className="ml-2 pl-3 list list-['\22C5'] md:text-[18px]">{item[0]}</li>
+                <li className="ml-2 pl-3 list md:text-[18px]">
+                  {'\u22C5'}
+                  {item[0]}
+                </li>
                 <p className="ml-auto md:text-[20px]">{item[1]}</p>
               </div>
             ))}
@@ -39,7 +42,7 @@ function PricesPage() {
           <ul className="flex flex-col gap-1 pt-1">
             {additionalServices.map((item) => (
               <div className="flex border-b border-gray-400 border-dotted">
-                <li className="ml-2 pl-3 list list-['\22C5'] md:text-[18px]">{item[0]}</li>
+                <li className="ml-2 pl-3 list list-['\u'] md:text-[18px]">{item[0]}</li>
                 <p className="ml-auto md:text-[20px]">{item[1]}</p>
               </div>
             ))}
@@ -52,7 +55,7 @@ function PricesPage() {
           <ul className="flex flex-col md:gap-1 pt-1">
             {importantDetails.map((item) => (
               <div className="flex font-semibold klitext-sm">
-                <li className="ml-2 pl-3 list list-['\22C5'] md:text-[15px] text-blush">{`${item}`}</li>
+                <li className="ml-2 pl-3 list list-['\u'] md:text-[15px] text-blush">{`${item}`}</li>
               </div>
             ))}
           </ul>

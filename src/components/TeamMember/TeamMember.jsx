@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Cat from '../cat/cat';
 
 function TeamMember({
   memberName,
@@ -26,7 +27,7 @@ function TeamMember({
   return (
     <div className="relative flex flex-col items-center w-full gap-4 max-w-[1250px] h-full animate-fadein">
       <div className="flex items-center justify-center gap-16">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-16">
           <div className="relative flex items-center justify-center flex-auto w-[250px] rounded-lg border-x-4 border-y-0 border-t-orangutan border-b-melon border-r-melon border-l-orangutan overflow-hidden drop-shadow-lg">
             <img ref={img} src={`./${name}.jpeg`} className="w-full top-20" />
           </div>
@@ -40,8 +41,14 @@ function TeamMember({
               </div>
             ))}
           </div>
+          <p className="text-justify italic font-bold text-sm text-basic max-w-[300px] border-1 border-b pb-4 border-dotted border-melon">Contact us, share your cat&apos;s needs, and our team will swiftly match you with a trusted sitter. Discuss details like routines and preferences, finalize the booking for a stress-free experience. Our goal is hassle-free and personalized cat sitting for your peace of mind.</p>
         </div>
-        <p className="text-justify italic font-bold text-sm text-basic max-w-[300px] border-1 border-b pb-4 border-dotted border-melon">Contact us, share your cat&apos;s needs, and our team will swiftly match you with a trusted sitter. Discuss details like routines and preferences, finalize the booking for a stress-free experience. Our goal is hassle-free and personalized cat sitting for your peace of mind.</p>
+      </div>
+      <div className="flex justify-center w-max gap-4 items-center  max-h-[500px] animate-fadein">
+        {[...Array(4)].map((item, index) => (
+          <Cat index={index} />
+        ))}
+
       </div>
     </div>
   );

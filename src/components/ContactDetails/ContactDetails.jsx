@@ -1,7 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ContactDetails() {
+function ContactDetails({
+  popupStateChanger,
+}) {
   const contactPoints = [
     ['whatsapp', '+971 - 501728594'],
     ['instagram', '@fairytails.catsitting'],
@@ -10,7 +13,13 @@ function ContactDetails() {
 
   return (
     <div className="relative flex items-center gap-16 border border-blush  bg-white p-10 rounded-lg bg-opacity-75 z-50 drop-shadow-lg">
-      <p className="absolute right-4 top-2 font-bold text-black select-none">&#x2715;</p>
+      <button
+        type="button"
+        className="absolute right-4 top-2 hover:font-bold text-black select-none"
+        onClick={popupStateChanger}
+      >
+        &#x2715;
+      </button>
       <div className="flex flex-col items-center self-center max-w-[600px] z-50">
         <img src="./cats/catn3.png" className="w-[175px] hover:animate-hop" alt="" />
         <p className="text-blush drop-shadow-lg self-center my-4">- - &#x25CF; - -</p>
@@ -21,7 +30,7 @@ function ContactDetails() {
       </div>
       <div className="flex flex-col items-center tracking-widest gap-4 w-full max-w-[375px] z-50">
         {contactPoints.map((item) => (
-          <div className="flex items-center w-full bg-blush pl-4 py-2 drop-shadow-lg rounded-md hover:animate-growhover">
+          <div className="flex items-center w-full bg-blush pl-4 py-2 drop-shadow-lg rounded-md">
             <img
               src={`./${item[0]}.svg`}
               className="w-[50px] opacity-90 drop-shadow-md"
@@ -35,5 +44,13 @@ function ContactDetails() {
 
   );
 }
+
+ContactDetails.propTypes = {
+  popupStateChanger: PropTypes.func,
+};
+
+ContactDetails.defaultProps = {
+  popupStateChanger: undefined,
+};
 
 export default ContactDetails;

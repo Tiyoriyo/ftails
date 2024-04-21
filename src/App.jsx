@@ -10,20 +10,24 @@ import ContactBtn from './components/ContactBtn/ContactBtn';
 
 function App() {
   const [state, setState] = useState('home');
+  const [blurItemState, setBlurItemState] = useState(null);
   const [hidden, bgFunc] = useState(true);
   const [index, setIndex] = useState(0);
 
   const stateChanger = (x) => {
     setState(x);
-    setIndex((prev) => prev + 1);
   };
 
-  const bgStateChanger = () => {
+  const popupStateChanger = (x) => {
+    if (hidden) {
+      setBlurItemState(x);
+    } else {
+      setBlurItemState(null);
+    }
     bgFunc(!hidden);
-    console.log('test');
   };
 
-  console.log(hidden);
+  console.log(blurItemState);
 
   return (
     <div className="relative flex flex-col items-center w-screen">
@@ -46,17 +50,42 @@ function App() {
         <ServicesPage />
         )}
         {state === 'affiliation' && (
-        <AffiliationPage />
+        <AffiliationPage
+          popupStateChanger={popupStateChanger}
+        />
         )}
       </div>
-      {!hidden && (
+      {!hidden && blurItemState === 'contactDetails' && (
         <div className="absolute flex items-center justify-center w-screen h-screen">
-          <ContactDetails />
+          <ContactDetails
+            popupStateChanger={popupStateChanger}
+          />
         </div>
       )}
-      <div className={`${hidden ? 'hidden' : null} absolute flex flex-auto items-center justify-center w-screen h-screen bg-white z-40 animate-fadein50`} onClick={bgStateChanger} />
+      {!hidden && blurItemState === 'affilLicense' && (
+        <div className="absolute flex items-center justify-center w-screen h-screen">
+          <ContactDetails
+            popupStateChanger={popupStateChanger}
+          />
+        </div>
+      )}
+      {!hidden && blurItemState === 'affilCertified' && (
+        <div className="absolute flex items-center justify-center w-screen h-screen">
+          <ContactDetails
+            popupStateChanger={popupStateChanger}
+          />
+        </div>
+      )}
+      {!hidden && blurItemState === 'affilCaring' && (
+        <div className="absolute flex items-center justify-center w-screen h-screen">
+          <ContactDetails
+            popupStateChanger={popupStateChanger}
+          />
+        </div>
+      )}
+      <div className={`${hidden ? 'hidden' : null} absolute flex flex-auto items-center justify-center w-screen h-screen bg-white z-40 animate-fadein50`} onClick={popupStateChanger} />
       <ContactBtn
-        bgStateChanger={bgStateChanger}
+        popupStateChanger={popupStateChanger}
       />
     </div>
   );

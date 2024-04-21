@@ -16,11 +16,6 @@ function Card({
       className="relative flex items-center flex-col bg-white border border-black drop-shadow-lg p-10  w-[85%] min-[850px]:w-[450px] font-sulphur font-bold max-w-[500px]"
       ref={card}
     >
-      <img
-        src={`./services/${icons[index]}.png`}
-        className="absolute w-28 -top-16 hover:animate-hop z-50"
-        alt=""
-      />
       <div className="flex flex-col items-center">
         <h1 className="text-[24px] text-basic drop-shadow-md tracking-wider">{services[itemName].title}</h1>
         <img src="./line.png" alt="" />
@@ -39,6 +34,11 @@ function Card({
           </li>
         ))}
       </ul>
+      <img
+        src={`./services/${icons[index]}.png`}
+        className="absolute w-28 -top-16 hover:animate-hop z-50"
+        alt=""
+      />
     </div>
   );
 }
